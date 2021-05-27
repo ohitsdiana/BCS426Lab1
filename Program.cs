@@ -1,4 +1,4 @@
-﻿/* Lab 1 Question 4
+﻿/* Lab 1 Question 3
  * 
  * Diana Guerrero
  * Professor Aydin
@@ -7,44 +7,34 @@
  * 
  * Partner(s): Patrick Adams
  * Resource(s): 
- * 1. https://www.geeksforgeeks.org/program-to-check-the-validity-of-a-password/
+ * 1. https://www.javatpoint.com/csharp-program-to-reverse-number
  * */
 
 using System;
 
-namespace BCS426Lab1Q4
+namespace BCS426Lab1Q3
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Question 4");
+            Console.WriteLine("Question 3 \n");
 
-            int count = 0;
+            int remainder, reverseNum = 0;
 
-            // Length between 6 and 15 characters.
-            int minLength = 6;
-            int maxLength = 15;
+            // Enter a number to reverse
+            Console.WriteLine("Enter a Number to Reverse: ");
+            int n = int.Parse(Console.ReadLine());
 
-            // Ask user to enter a password
-            Console.WriteLine("Enter a Password: ");
-            string password = Console.ReadLine();
-
-            // At least one digit (0-9).
-            for (int i = 0; i <= 9; i++)
+            while( n > 0)
             {
-                // Converting int to string 
-                String str1 = i.ToString();
-
-                if (password.Contains(str1))
-                {
-                    count = 1;
-                }
+                remainder = n % 10;
+                reverseNum = reverseNum * 10 + remainder;
+                n = n / 10;
             }
 
-            // At least one lowercase letter (a-z).
-
-
+            // Everytime I try to concatinate n + "Reverse Number: " + reverseNum it registers n as 0 so I wasn't able to have a layout of "123321"
+            Console.Write("Reverse Number: " + reverseNum);
         }
     }
 }
