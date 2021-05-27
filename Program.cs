@@ -1,4 +1,4 @@
-﻿/* Lab 1 Questions 1 & 2
+﻿/* Lab 1 Question 4
  * 
  * Diana Guerrero
  * Professor Aydin
@@ -6,65 +6,45 @@
  * 2/7/21
  * 
  * Partner(s): Patrick Adams
- * Question 1 Resource(s): 
- * 1. https://www.w3resource.com/csharp-exercises/data-types/csharp-data-type-exercise-2.php
- * 2. https://www.w3resource.com/csharp-exercises/for-loop/csharp-for-loop-exercise-20.php
- * 
- * Question 2 Resource(s):
- * 1. https://www.c-sharpcorner.com/blogs/triangle-diamond-pattern-programming-in-c-sharp
- * 2. https://forgetcode.com/csharp/2034-printing-a-diamond-pattern
- */
+ * Resource(s): 
+ * 1. https://www.geeksforgeeks.org/program-to-check-the-validity-of-a-password/
+ * */
 
 using System;
 
-namespace BCS426Lab1Q1_2
+namespace BCS426Lab1Q4
 {
-    public class Program
+    class Program
     {
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
-            Console.WriteLine("Question 1 & 2 \n");
+            Console.WriteLine("Question 4");
 
-            // Ask the user to enter a character
-            Console.Write("Enter A Character: ");
-            string s = Console.ReadLine();
+            int count = 0;
 
-            // Ask the user to enter the number of rows
-            Console.Write("Enter The Number Of Rows: ");
-            int rows = Convert.ToInt32(Console.ReadLine());
+            // Length between 6 and 15 characters.
+            int minLength = 6;
+            int maxLength = 15;
 
-            Console.Write(" ");
+            // Ask user to enter a password
+            Console.WriteLine("Enter a Password: ");
+            string password = Console.ReadLine();
 
-            // Display number of lines
-            for (int i = 0; i <= rows; i++)
+            // At least one digit (0-9).
+            for (int i = 0; i <= 9; i++)
             {
-                // Number of characters per line
-                for (int x = 1; x <= rows - i; x++)
-                    Console.Write(" ");
+                // Converting int to string 
+                String str1 = i.ToString();
 
-                // Multiples number of characters
-                for (int x = 1; x <= 2 * i - 1; x++)
+                if (password.Contains(str1))
                 {
-                    Console.Write(s);
+                    count = 1;
                 }
-
-                Console.WriteLine();
             }
 
-            // Diamond Shape Question 2
+            // At least one lowercase letter (a-z).
 
-            // Reverse the outer loop on line 39
-            for (int i = rows - 1; i >= 1; i--)
-            {
-                for (int x = 1; x <= rows - i; x++)
-                    Console.Write(" ");
-                for (int x = 1; x <= 2 * i - 1; x++)
-                {
-                    // Prints character in reverse
-                    Console.Write(s);                   
-                }
-                Console.WriteLine();
-            }
+
         }
     }
 }
